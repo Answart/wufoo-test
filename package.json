@@ -2,7 +2,7 @@
   "name": "wufoo-node",
   "version": "0.0.0",
   "description": "Node app to work with the Wufoo API",
-  "main": "web.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
