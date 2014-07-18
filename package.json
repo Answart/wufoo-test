@@ -1,0 +1,27 @@
+{
+  "name": "wufoo-node",
+  "version": "0.0.0",
+  "description": "Node app to work with the Wufoo API",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:Answart/node-example.git"
+  },
+  "keywords": [
+    "wufoo",
+    "example",
+    "heroku",
+    "app",
+    "with",
+    "node"
+  ],
+  "author": "answart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Answart/node-example/issues"
+  },
+  "homepage": "https://github.com/Answart/node-example"
+}
