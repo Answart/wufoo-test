@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/Answart/node-example/issues"
   },
-  "homepage": "https://github.com/Answart/node-example"
+  "homepage": "https://github.com/Answart/node-example",
+  "dependencies": {
+    "express": "^4.6.1",
+    "logfmt": "^1.1.2"
+  }
 }
