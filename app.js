@@ -165,7 +165,24 @@ getCommentCount = function(request, response) {
 //////////////////////////// WEBHOOKS ////////////////////////////
 // Add a Webhook for a form
 
+//    wufoo.webhook().add("formid", "http://localhost:3000", function(err, hashid) {
+//      // store the webhook hashid somewhere in case we want to delete them later.
+//    })
 
+//    // pass in optional options
+//    var options = {url: "http://abc.com/webhook", handshakeKey: "hand-shaking", metadata: true}
+//    wufoo.webhook().add("formid", options, function(err, hashid) {
+//      // store the webhook hashid somewhere in case we want to delete them later.
+//      db.put("WebHooks", {formid:form.hash, key:hashid});
+//    })
+
+// Delete the WebHook. More info:
+//    wufoo.webhook().delete("formid", "webhookHashId", function(err, success) {
+//      if (!success) {
+//        // do something.
+//      }
+
+//    })
 
 
 

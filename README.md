@@ -8,11 +8,11 @@ https://github.com/jusx/node-wufoo
 ####EXAMPLE
 
 #####To View all forms:
-![http://localhost:3000/api/v1/getForms?username=answart&apikey=2BJ3-IKC6-LSJU-227P]()
+http://localhost:3000/api/v1/getForms?username=answart&apikey=2BJ3-IKC6-LSJU-227P
 #####To View a form:
-![http://localhost:3000/api/v1/getFormEntries?username=answart&apikey=2BJ3-IKC6-LSJU-227P&formhash=q2260j51chrkf6]()
+http://localhost:3000/api/v1/getFormEntries?username=answart&apikey=2BJ3-IKC6-LSJU-227P&formhash=q2260j51chrkf6
 #####To View entries in a form:
-![http://localhost:3000/api/v1/getFormEntries?username=answart&apikey=2BJ3-IKC6-LSJU-227P&formhash=q2260j51chrkf6]()
+http://localhost:3000/api/v1/getFormEntries?username=answart&apikey=2BJ3-IKC6-LSJU-227P&formhash=q2260j51chrkf6
 
 
 Routes which require just a username and apikey:
@@ -40,8 +40,8 @@ Routes which require a username, apikey, and reporthash:
 
 Wufoo Integration
 
-- http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/Webhooks)
-- http://knowledgebase.wbpsystems.com/content/Save_data_from_WuFoo_Forms_into_Heap_CRM)
+- http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/Webhooks
+- http://knowledgebase.wbpsystems.com/content/Save_data_from_WuFoo_Forms_into_Heap_CRM
 
 ------------------------
 Create a form
