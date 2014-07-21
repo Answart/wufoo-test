@@ -1,8 +1,9 @@
 var express = require('express');
 var app = express();
+
 var bodyParser = require('body-parser');
-var http = require('http');
-var path = require('path');
+// var http = require('http');
+// var path = require('path');
 // var server = require("./server");
 // var router = require("./router");
 
@@ -173,13 +174,15 @@ app.get('/api/v1/getWidgets', getWidgets);
 /////////
 
 // app.use(express.bodyParser());
+// var hero = 'http://arcane-eyrie-8261.herokuapp.com'
 
-// app.post('/', function(req, res) {
-//    console.log(req.body);
-// });
+app.post('/api/v1/notifications', function(request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+   console.log(request.body);
+   // console.log(response.body)
+});
 
 // var port = process.env.PORT || 5000;
-var hero = 'http://arcane-eyrie-8261.herokuapp.com'
 
 
 // SERVER
