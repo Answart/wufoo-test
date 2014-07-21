@@ -150,7 +150,7 @@ getCommentCount = function(request, response) {
 
 
 
-// ROUTES
+// GET ROUTES
 // for forms...
 app.get('/api/v1/getForms', getForms);
 app.get('/api/v1/getForm', getForm);
@@ -165,21 +165,17 @@ app.get('/api/v1/getReport', getReport);
 app.get('/api/v1/getReportEntries', getReportEntries);
 app.get('/api/v1/getWidgets', getWidgets);
 
-// work in progress
-// app.get('/api/v1/getEntriesCount', getEntriesCount);
-// app.get('/api/v1/getFields', getFields);
-
 
 
 /////////
 
 // app.use(express.bodyParser());
 // var hero = 'http://arcane-eyrie-8261.herokuapp.com'
-
 app.post('/api/v1/notifications', function(request, response) {
-   console.log(request.body);
-    response.setHeader('Content-Type', 'application/json');
-    response.end(JSON.stringify(request.body));
+    console.log(request.body);
+    // response.setHeader('Content-Type', 'application/json');
+    // response.writeHead();
+    // response.end(JSON.stringify(request.body));
 });
 
 
