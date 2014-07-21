@@ -1,5 +1,15 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+var http = require('http');
+var path = require('path');
+// var server = require("./server");
+// var router = require("./router");
+
+
+app.use(logfmt.requestLogger());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
 
 // ROUTE FUNCTIONS
@@ -115,7 +125,6 @@ getCommentCount = function(request, response) {
    });
 }
 
-
 //////////////////////////// WEBHOOKS ////////////////////////////
 // Add a Webhook for a form
 
@@ -161,10 +170,33 @@ app.get('/api/v1/getWidgets', getWidgets);
 
 
 
+/////////
+
+// app.use(express.bodyParser());
+
+// app.post('/', function(req, res) {
+//    console.log(req.body);
+// });
+
+// var port = process.env.PORT || 5000;
+var hero = 'http://arcane-eyrie-8261.herokuapp.com'
+
+
 // SERVER
+// Listening locally
 var server = app.listen(process.env.PORT || 3000, function() {
     console.log('Listening on port %d', server.address().port);
 });
+
+
+
+// app.listen(hero, function() {
+//   console.log("Listening on " + hero);
+//   // console.log(req.body);
+// });
+
+
+//////// NOTES
 
 // http://localhost:3000/api/v1/getForm?username=answart&apikey=2BJ3-IKC6-LSJU-227P&formhash=q2260j51chrkf6
 
@@ -172,5 +204,6 @@ var server = app.listen(process.env.PORT || 3000, function() {
 // apikey: 2BJ3-IKC6-LSJU-227P
 // formhash: q2260j51chrkf6
 // reporthash: z1bsn3ar155c37e
+// heroku app: http://arcane-eyrie-8261.herokuapp.com/
 
 // wufoo forms url: utilities.bislr.net:3333
