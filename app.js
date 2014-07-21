@@ -7,7 +7,7 @@ var path = require('path');
 // var router = require("./router");
 
 
-app.use(logfmt.requestLogger());
+// app.use(logfmt.requestLogger());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
