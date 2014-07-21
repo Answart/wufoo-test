@@ -178,10 +178,9 @@ app.get('/api/v1/getWidgets', getWidgets);
 
 app.post('/api/v1/notifications', function(request, response) {
    console.log(request.body);
-   // response.send(request.body);
+    response.setHeader('Content-Type', 'application/json');
+    response.end(JSON.stringify(request.body);
 });
-
-// var port = process.env.PORT || 5000;
 
 
 // SERVER
@@ -190,12 +189,6 @@ var server = app.listen(process.env.PORT || 3000, function() {
     console.log('Listening on port %d', server.address().port);
 });
 
-
-
-// app.listen(hero, function() {
-//   console.log("Listening on " + hero);
-//   // console.log(req.body);
-// });
 
 
 //////// NOTES
