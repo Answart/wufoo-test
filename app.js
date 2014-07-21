@@ -179,7 +179,7 @@ app.get('/api/v1/getWidgets', getWidgets);
 app.post('/api/v1/notifications', function(request, response) {
    console.log(request.body);
     response.setHeader('Content-Type', 'application/json');
-    response.end(JSON.stringify(request.body);
+    response.end(JSON.stringify(request.body));
 });
 
 
