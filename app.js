@@ -177,7 +177,8 @@ app.get('/api/v1/getWidgets', getWidgets);
 // var hero = 'http://arcane-eyrie-8261.herokuapp.com'
 
 app.post('/api/v1/notifications', function(request, response) {
-   response.send(request.body)
+   console.log(request.body);
+   // response.send(request.body);
 });
 
 // var port = process.env.PORT || 5000;
