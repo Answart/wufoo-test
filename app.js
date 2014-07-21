@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
-
+var logfmt = require('logfmt');
 var bodyParser = require('body-parser');
+
 app.use( bodyParser.json() );
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -48,6 +49,7 @@ getReportEntries = function(request, response) {
    var wufoo = new Wufoo(request.query.username, request.query.apikey);
 
    wufoo.getReportEntries(request.query.formhash, function(err, report){
+      console.log(report)
       response.send(report);
    });
 }
@@ -165,9 +167,9 @@ app.post('/api/v1/notifications', function(request, response) {
     response.setHeader('Content-Type', 'application/json');
     response.end(JSON.stringify(request.body));
     console.log("+++++++++++++++++")
-    console.log(JSON.stringify(request.body));
+    console.log(JSON.stringify(request.body['Field16']));
     console.log("- - - - - - - - - - -")
-    console.log('req.body.name', request.body['name']);
+    console.log('request.body.Field16', request.body['Field16']);
     console.log("====================")
 });
 
