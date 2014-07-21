@@ -2,13 +2,6 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require('body-parser');
-// var http = require('http');
-// var path = require('path');
-// var server = require("./server");
-// var router = require("./router");
-
-
-// app.use(logfmt.requestLogger());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -159,7 +152,7 @@ app.get('/api/v1/getFields', getFields);
 app.get('/api/v1/getComments', getComments);
 app.get('/api/v1/getCommentCount', getCommentCount);
 
-// for reports
+// for reports...
 app.get('/api/v1/getReports', getReports);
 app.get('/api/v1/getReport', getReport);
 app.get('/api/v1/getReportEntries', getReportEntries);
@@ -167,34 +160,11 @@ app.get('/api/v1/getWidgets', getWidgets);
 
 
 
-/////////
-
-// app.use(express.bodyParser());
-// var hero = 'http://arcane-eyrie-8261.herokuapp.com'
 app.post('/api/v1/notifications', function(request, response) {
-    console.log(request.body);
     response.setHeader('Content-Type', 'application/json');
-    response.writeHead();
     response.end(JSON.stringify(request.body));
 });
 
-
-// SERVER
-// Listening locally
 var server = app.listen(process.env.PORT || 3000, function() {
     console.log('Listening on port %d', server.address().port);
 });
-
-
-
-//////// NOTES
-
-// http://localhost:3000/api/v1/getForm?username=answart&apikey=2BJ3-IKC6-LSJU-227P&formhash=q2260j51chrkf6
-
-// username: answart
-// apikey: 2BJ3-IKC6-LSJU-227P
-// formhash: q2260j51chrkf6
-// reporthash: z1bsn3ar155c37e
-// heroku app: http://arcane-eyrie-8261.herokuapp.com/
-
-// wufoo forms url: utilities.bislr.net:3333
