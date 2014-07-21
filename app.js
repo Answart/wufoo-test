@@ -1,20 +1,16 @@
 var express = require('express');
 var app = express();
 
+
 // ROUTE FUNCTIONS
 
 //////////////////////////// FORMS ////////////////////////////
-
 //See all of your a user's forms
 getForms = function(request, response) {
    var Wufoo = require("wufoo");
    var wufoo = new Wufoo(request.query.username, request.query.apikey);
 
    wufoo.getForms(function(err, forms){
-      // console.log(form.hash);
-      // console.log(form.name);
-      // console.log(form.description);
-      // console.log("+++++++++++++++")
       response.send(forms);
    });
 }
@@ -29,40 +25,6 @@ getForm = function(request, response) {
    });
 }
 
-//////////////////////////// FORMS.entries
-// // alternate way to grab entries from a form
-// getEntries = function(request, response) {
-//    var Wufoo = require("wufoo");
-//    var wufoo = new Wufoo(request.query.username, request.query.apikey);
-//    var form = request.query.formhash;
-
-//     wufoo.form.getEntries(function(err, entries) {
-//       response.send(entries);
-//    });
-// }
-
-// See how many times (number) a form has been submitted
-// getEntriesCount = function(request, response) {
-//    var Wufoo = require("wufoo");
-//    var wufoo = new Wufoo(request.query.username, request.query.apikey);
-//    var form = wufoo.form(request.query.formhash);
-
-//     wufoo.form.getEntriesCount(function(err, count) {
-//       console.log("There are " + count + " number of entries");
-//       response.send(count);
-//    });
-// }
-
-// //View Fields from
-// getFields = function(request, response) {
-//    var Wufoo = require("wufoo");
-//    var wufoo = new Wufoo(request.query.username, request.query.apikey);
-//    var form = request.query.formhash;
-
-//     wufoo.form.getFields(function(err, fields) {
-//       response.send(fields);
-//    });
-// }
 
 //////////////////////////// ENTRIES ////////////////////////////
 // View entries from a user's form (values of the fields)
@@ -85,6 +47,7 @@ getReportEntries = function(request, response) {
    });
 }
 
+
 //////////////////////////// REPORTS ////////////////////////////
 // View all of the reports on a account
 getReports = function(request, response) {
@@ -105,18 +68,6 @@ getReport = function(request, response) {
       response.send(report);
    });
 }
-//   report.getEntries(function(err, entries) {
-//  // do something here.
-// });
-
-// report.getEntriesCount(function(err, count) {
-//   // do something here.
-//   console.log("There are " + count + " number of entries");
-// });
-
-// report.getFields(function(err, fields) {
-//   // do something here.
-// });
 
 
 //////////////////////////// FIELDS ////////////////////////////
@@ -130,6 +81,7 @@ getFields = function(request, response) {
    });
 }
 
+
 //////////////////////////// WIDGETS ////////////////////////////
 //See all the widgets a user uses in a report
 getWidgets = function(request, response) {
@@ -140,6 +92,7 @@ getWidgets = function(request, response) {
       response.send(widgets);
     });
 }
+
 
 //////////////////////////// COMMENTS ////////////////////////////
 //Get all the comments for a form
@@ -162,6 +115,7 @@ getCommentCount = function(request, response) {
    });
 }
 
+
 //////////////////////////// WEBHOOKS ////////////////////////////
 // Add a Webhook for a form
 
@@ -181,9 +135,7 @@ getCommentCount = function(request, response) {
 //      if (!success) {
 //        // do something.
 //      }
-
 //    })
-
 
 
 
@@ -208,6 +160,7 @@ app.get('/api/v1/getWidgets', getWidgets);
 // app.get('/api/v1/getFields', getFields);
 
 
+
 // SERVER
 var server = app.listen(process.env.PORT || 3000, function() {
     console.log('Listening on port %d', server.address().port);
@@ -219,3 +172,5 @@ var server = app.listen(process.env.PORT || 3000, function() {
 // apikey: 2BJ3-IKC6-LSJU-227P
 // formhash: q2260j51chrkf6
 // reporthash: z1bsn3ar155c37e
+
+// wufoo forms url: utilities.bislr.net:3333
