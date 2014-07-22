@@ -153,7 +153,8 @@ getCommentCount = function(request, response) {
 uriRequest = function(request, response) {
    var Wufoo = require("wufoo");
    var wufoo = new Wufoo(request.query.username, request.query.apikey);
-   var desired_uri = "https://answart.wufoo.com/api/v3/entries/cool-form.json?Filter15=EntryId+Is_equal_to+Cloudy"
+   var desired_uri = "http://answart.wufoo.com/forms/cool-form/def/field15=Cloudy"
+   // "https://answart.wufoo.com/api/v3/entries/cool-form.json?Filter15=EntryId+Is_equal_to+Cloudy"
    // "https://answart.wufoo.com/api/v3/users.json"
 
 
