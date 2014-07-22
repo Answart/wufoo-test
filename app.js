@@ -152,16 +152,19 @@ getCommentCount = function(request, response) {
 // https://answart.wuffo.com/api/v3
 uriRequest = function(request, response) {
    var Wufoo = require("wufoo");
-   var wufoo = new Wufoo(request.query.username, request.query.apikey);
-   var desired_uri = "http://answart.wufoo.com/forms/cool-form/def/field15=Cloudy"
+   var username = request.query.username;
+   var wufoo = new Wufoo(username, request.query.apikey);
+   var form_name = request.query.form_name;
+   var field = request.query.field;
+   var desired_uri = "http://"+username+".wufoo.com/forms/"+form_name+"/def/field15="+field
    // "https://answart.wufoo.com/api/v3/entries/cool-form.json?Filter15=EntryId+Is_equal_to+Cloudy"
    // "https://answart.wufoo.com/api/v3/users.json"
 
 
    wufoo.request("get", desired_uri , function(err, requesti){
-      console.log(requesti)
-      console.log("+++++++++")
       response.send(requesti);
+      console.log("+++++++++")
+      console.log(requesti)
    });
 }
 
